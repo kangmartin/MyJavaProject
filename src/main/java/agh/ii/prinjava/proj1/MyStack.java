@@ -4,12 +4,11 @@ import agh.ii.prinjava.proj1.impl.MyStackDLLBImpl;
 
 public interface MyStack<E> {
 
-    /**  Pops the top element off the stack and returns it.  */
+    /** Pops the top element off the stack and returns it. */
     E pop();
 
     /** Pushes an integer onto the top of the stack. */
     void push(E x);
-
 
     /** Checks if the stack is empty. */
     default boolean isEmpty() {
