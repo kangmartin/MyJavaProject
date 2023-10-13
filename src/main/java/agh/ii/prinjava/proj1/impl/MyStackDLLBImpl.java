@@ -1,27 +1,52 @@
+
 package agh.ii.prinjava.proj1.impl;
 
 import agh.ii.prinjava.proj1.MyStack;
 
-public class MyStackDLLBImpl<E> implements MyStack<E> {
-    private DLinkList<E> elems;
+import java.util.ArrayList;
+import java.util.List;
 
+public class MyStackDLLBImpl<E> implements MyStack<E> {
+    private final DLinkList<E> elems = new DLinkList<>();
+
+    /** Pop an element from the top of the stack. */
     @Override
     public E pop() {
-        throw new IllegalStateException("To be implemented");
+        return elems.removeFirst();
     }
 
+    /** Push an element to the top of the stack. */
     @Override
     public void push(E x) {
-        throw new IllegalStateException("To be implemented");
+        elems.addFirst(x);
     }
 
+    /** Get the number of elements in the stack. */
     @Override
     public int numOfElems() {
-        throw new IllegalStateException("To be implemented");
+        int count = 0;
+        List<E> temp = new ArrayList<>();
+        while (true) {
+            try {
+                E elem = elems.removeFirst();
+                temp.add(elem);
+                count++;
+            } catch (Exception e) {
+                break;
+            }
+        }
+
+        for (E e : temp) {
+            elems.addFirst(e);
+        }
+        return count;
     }
 
+    /** Peek at the top element without removing it. */
     @Override
     public E peek() {
-        throw new IllegalStateException("To be implemented");
+        E elem = elems.removeFirst();
+        elems.addFirst(elem);
+        return elem;
     }
 }
