@@ -5,53 +5,56 @@ public class DLinkList<E> {
     private Node<E> last;
 
     private static class Node<T> {
-        T elem;
+        T element;
         Node<T> next;
         Node<T> prev;
     }
 
+    /** Adds an element to the beginning of the list. */
     public void addFirst(E e) {
         Node<E> newNode = new Node<>();
-        newNode.elem = e;
+        newNode.element = e;
         newNode.next = first;
         if (first != null) first.prev = newNode;
         else last = newNode;
         first = newNode;
     }
 
+    /** Adds an element to the end of the list. */
     public void addLast(E e) {
         Node<E> newNode = new Node<>();
-        newNode.elem = e;
+        newNode.element = e;
         newNode.prev = last;
         if (last != null) last.next = newNode;
         else first = newNode;
         last = newNode;
     }
 
+    /** Removes and returns the first element of the list. */
     public E removeFirst() {
-        if (first == null) throw new RuntimeException("Cannot remove from an empty list");
-        E elem = first.elem;
+        E element = first.element;
         first = first.next;
         if (first != null) first.prev = null;
         else last = null;
-        return elem;
+        return element;
     }
 
+    /** Removes and returns the last element of the list. */
     public E removeLast() {
-        if (last == null) throw new RuntimeException("Cannot remove from an empty list");
-        E elem = last.elem;
+        E element = last.element;
         last = last.prev;
         if (last != null) last.next = null;
         else first = null;
-        return elem;
+        return element;
     }
 
+    /** Returns a string representation of the list. */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         Node<E> current = first;
         while (current != null) {
-            sb.append(current.elem).append(" ");
+            sb.append(current.element).append(" ");
             current = current.next;
         }
         return sb.toString().trim();
