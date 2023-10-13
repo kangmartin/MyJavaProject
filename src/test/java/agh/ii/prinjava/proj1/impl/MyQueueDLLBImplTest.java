@@ -7,7 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MyQueueDLLBImplTest {
     MyQueue<Integer> queueOfInts = MyQueue.create();
-    /** Test the enqueue method. */
+
+    /** Tests adding elements to the queue and verifying the front element and size. */
     @Test
     void testEnqueue() {
         queueOfInts.enqueue(1);
@@ -15,7 +16,7 @@ class MyQueueDLLBImplTest {
         assertEquals(1, queueOfInts.peek());
     }
 
-    /** Test the dequeue method. */
+    /** Tests removing the front element from the queue and verifying the dequeued value and size. */
     @Test
     void testDequeue() {
         queueOfInts.enqueue(1);
@@ -24,7 +25,7 @@ class MyQueueDLLBImplTest {
         assertEquals(1, queueOfInts.numOfElems());
     }
 
-    /** Test the numOfElems method. */
+    /** Tests the count of elements in the queue after enqueuing multiple elements. */
     @Test
     void testNumOfElems() {
         assertEquals(0, queueOfInts.numOfElems());
@@ -35,7 +36,7 @@ class MyQueueDLLBImplTest {
         assertEquals(4, queueOfInts.numOfElems());
     }
 
-    /** Test the peek method. */
+    /** Tests peeking at the front element of the queue without removing it after enqueuing elements. */
     @Test
     void testPeek() {
         queueOfInts.enqueue(1);

@@ -19,59 +19,47 @@ class DLinkListTest {
     void tearDown() {
         dLinkList = null;
     }
-    /** Tests the addFirst() method of DLinkList. */
+
+    /** Tests adding elements at the beginning of the DLinkList using addFirst(). */
     @Test
     void testAddFirst() {
-        System.out.println("Test addFirst method:");
         dLinkList.addFirst(1);
-        System.out.println("Add first: 1 -> " + dLinkList.toString());
         dLinkList.addFirst(2);
-        System.out.println("Add first: 2 -> " + dLinkList.toString());
         assertEquals("2 1", dLinkList.toString());
     }
 
-    /** Tests the addLast() method of DLinkList. */
+    /** Tests adding elements at the end of the DLinkList using addLast(). */
     @Test
     void testAddLast() {
-        System.out.println("Test addLast method:");
         dLinkList.addLast(1);
-        System.out.println("Add last: 1 -> " + dLinkList.toString());
         dLinkList.addLast(2);
-        System.out.println("Add last: 2 -> " + dLinkList.toString());
         assertEquals("1 2", dLinkList.toString());
     }
-    /** Tests the removeFirst() method of DLinkList. */
+
+    /** Tests removing the first element from the DLinkList using removeFirst(). */
     @Test
     void testRemoveFirst() {
-        System.out.println("Test removeFirst method:");
         dLinkList.addFirst(1);
         dLinkList.addFirst(2);
-        System.out.println("List after adding elements: " + dLinkList.toString());
-        int removedElement = dLinkList.removeFirst();
-        System.out.println("Removed first element: " + removedElement + " -> " + dLinkList.toString());
+        assertEquals(2, dLinkList.removeFirst());
         assertEquals(1, dLinkList.removeFirst());
     }
-    /** Tests the removeLast() method of DLinkList. */
+
+    /** Tests removing the last element from the DLinkList using removeLast(). */
     @Test
     void testRemoveLast() {
-        System.out.println("Test removeLast method:");
         dLinkList.addLast(1);
         dLinkList.addLast(2);
-        System.out.println("List after adding elements: " + dLinkList.toString());
-        int removedElement = dLinkList.removeLast();
-        System.out.println("Removed last element: " + removedElement + " -> " + dLinkList.toString());
+        assertEquals(2, dLinkList.removeLast());
         assertEquals(1, dLinkList.removeLast());
     }
 
-    /** Tests the toString() method of DLinkList. */
+    /** Tests the representation of the DLinkList as a string using toString(). */
     @Test
-    void testToString(){
-        System.out.println("Test toString methode:");
+    void testToString() {
         dLinkList.addFirst(10);
         dLinkList.addFirst(20);
         dLinkList.addFirst(30);
-        System.out.println("List after adding elements:" + dLinkList.toString());
         assertEquals("30 20 10", dLinkList.toString());
     }
-
 }

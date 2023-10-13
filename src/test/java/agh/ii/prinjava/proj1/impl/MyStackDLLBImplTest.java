@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MyStackDLLBImplTest {
     MyStack<Integer> stackOfInts = MyStack.create();
 
-    /** Test the push() method. */
+    /** Tests pushing elements to the stack and verifying the top using peek(). */
     @Test
     void testPush() {
         stackOfInts.push(1);
@@ -17,7 +17,7 @@ class MyStackDLLBImplTest {
         assertEquals(2, stackOfInts.peek());
     }
 
-    /** Test the pop() method. */
+    /** Tests popping elements from the stack and verifying the popped values. */
     @Test
     void testPop() {
         stackOfInts.push(1);
@@ -26,7 +26,7 @@ class MyStackDLLBImplTest {
         assertEquals(1, stackOfInts.pop());
     }
 
-    /** Test the numOfElems() method. */
+    /** Tests the count of elements in the stack after pushing elements. */
     @Test
     void testNumOfElems() {
         assertEquals(0, stackOfInts.numOfElems());
@@ -36,7 +36,7 @@ class MyStackDLLBImplTest {
         assertEquals(2, stackOfInts.numOfElems());
     }
 
-    /** Test the peek() method. */
+    /** Tests peeking at the top element of the stack without removing it. */
     @Test
     void testPeek() {
         stackOfInts.push(1);
