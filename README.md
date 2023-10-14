@@ -63,6 +63,6 @@ System.out.println(stack.pop()); // Expected output: 10
 Unit tests are provided for each implementation to ensure methods functionality.
 
 ## Contributors
-- Contributor 1
-- Contributor 2
-- Contributor 3
+- Martin KANG
+- Julie MAHOT
+- ***
