@@ -65,4 +65,4 @@ Unit tests are provided for each implementation to ensure methods functionality.
 ## Contributors
 - Martin KANG
 - Julie MAHOT
-- ***
+- Théo THACH--DELACROIX
