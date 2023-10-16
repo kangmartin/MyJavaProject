@@ -2,26 +2,56 @@ package agh.ii.prinjava.proj1;
 
 import agh.ii.prinjava.proj1.impl.MyQueueDLLBImpl;
 
+/**
+ * Represents a generic queue interface.
+ *
+ * @param <E> the type of elements held in this queue
+ */
 public interface MyQueue<E> {
 
-    /** Enqueues an integer onto the end of the queue. */
+    /**
+     * Inserts the specified element into this queue.
+     *
+     * @param x the element to be inserted
+     */
     void enqueue(E x);
 
-    /** Dequeues the last element of the queue and returns it. */
+    /**
+     * Removes and returns the element at the front of this queue.
+     *
+     * @return the element at the front of this queue
+     */
     E dequeue();
 
-    /** Checks if the queue is empty. */
+    /**
+     * Checks if this queue is empty.
+     *
+     * @return true if this queue is empty, false otherwise
+     */
     default boolean isEmpty() {
         return numOfElems() == 0;
     }
 
-    /** Returns the number of elements in the queue. */
+    /**
+     * Returns the number of elements in this queue.
+     *
+     * @return the number of elements in this queue
+     */
     int numOfElems();
 
-    /** Returns the last element of the queue without removing it. */
+    /**
+     * Retrieves, but does not remove, the element at the front of this queue.
+     *
+     * @return the element at the front of this queue
+     */
     E peek();
 
-    /** Consider pros and cons of having a factory method in the interface */
+    /**
+     * Creates and returns a new instance of MyQueue.
+     *
+     * @param <T> the type of elements held in the created queue
+     * @return a new instance of MyQueue
+     */
     static <T> MyQueue<T> create() {
         return new MyQueueDLLBImpl<>();
     }

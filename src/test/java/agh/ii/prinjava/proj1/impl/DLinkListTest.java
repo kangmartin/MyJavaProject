@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class DLinkListTest {
     DLinkList<Integer> dLinkList;
 
-    /** Sets up the test environment before each test. */
     @BeforeEach
     void setUp() {
         dLinkList = new DLinkList<>();
@@ -20,7 +19,12 @@ class DLinkListTest {
         dLinkList = null;
     }
 
-    /** Tests adding elements at the beginning of the DLinkList using addFirst(). */
+
+    /**
+     * Test the addFirst operation of the list.
+     * This test verifies that elements are correctly added to the beginning of the list
+     * and that the order of elements is maintained.
+     */
     @Test
     void testAddFirst() {
         dLinkList.addFirst(1);
@@ -28,7 +32,11 @@ class DLinkListTest {
         assertEquals("2 1", dLinkList.toString());
     }
 
-    /** Tests adding elements at the end of the DLinkList using addLast(). */
+    /**
+     * Test the addLast operation of the list.
+     * This test verifies that elements are correctly added to the end of the list
+     * and that the order of elements is maintained.
+     */
     @Test
     void testAddLast() {
         dLinkList.addLast(1);
@@ -36,7 +44,11 @@ class DLinkListTest {
         assertEquals("1 2", dLinkList.toString());
     }
 
-    /** Tests removing the first element from the DLinkList using removeFirst(). */
+    /**
+     * Test the removeFirst operation of the list.
+     * This test verifies that elements are correctly removed from the beginning of the list
+     * and that the order of elements is maintained.
+     */
     @Test
     void testRemoveFirst() {
         dLinkList.addFirst(1);
@@ -45,7 +57,12 @@ class DLinkListTest {
         assertEquals(1, dLinkList.removeFirst());
     }
 
-    /** Tests removing the last element from the DLinkList using removeLast(). */
+
+    /**
+     * Test the removeLast operation of the list.
+     * This test verifies that elements are correctly removed from the end of the list
+     * and that the order of elements is maintained.
+     */
     @Test
     void testRemoveLast() {
         dLinkList.addLast(1);
@@ -54,7 +71,10 @@ class DLinkListTest {
         assertEquals(1, dLinkList.removeLast());
     }
 
-    /** Tests the representation of the DLinkList as a string using toString(). */
+    /**
+     * Test the numOfElems operation of the list.
+     * This test verifies that the number of elements in the list is correctly returned.
+     */
     @Test
     void testToString() {
         dLinkList.addFirst(10);

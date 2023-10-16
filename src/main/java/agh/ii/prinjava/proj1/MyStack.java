@@ -2,27 +2,57 @@ package agh.ii.prinjava.proj1;
 
 import agh.ii.prinjava.proj1.impl.MyStackDLLBImpl;
 
+/**
+ * Represents a generic stack interface.
+ *
+ * @param <E> the type of elements held in this stack
+ */
 public interface MyStack<E> {
 
-    /** Pops the top element off the stack and returns it. */
+    /**
+     * Removes and returns the element at the top of this stack.
+     *
+     * @return the element at the top of this stack
+     */
     E pop();
 
-    /** Pushes an integer onto the top of the stack. */
+    /**
+     * Pushes an element onto the top of this stack.
+     *
+     * @param x the element to be pushed onto this stack
+     */
     void push(E x);
 
-    /** Checks if the stack is empty. */
+    /**
+     * Checks if this stack is empty.
+     *
+     * @return true if this stack is empty, false otherwise
+     */
     default boolean isEmpty() {
         return numOfElems() == 0;
     }
 
-    /** Returns the number of elements in the stack. */
+    /**
+     * Returns the number of elements in this stack.
+     *
+     * @return the number of elements in this stack
+     */
     int numOfElems();
 
 
-    /** Returns the top element of the stack without removing it. */
+    /**
+     * Retrieves, but does not remove, the element at the top of this stack.
+     *
+     * @return the element at the top of this stack
+     */
     E peek();
 
-    /** Consider pros and cons of having a factory method in the interface */
+    /**
+     * Creates and returns a new instance of MyStack.
+     *
+     * @param <T> the type of elements held in the created stack
+     * @return a new instance of MyStack
+     */
     static <T> MyStack<T> create() {
         return new MyStackDLLBImpl<T>();
     }

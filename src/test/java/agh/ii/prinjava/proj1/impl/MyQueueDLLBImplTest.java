@@ -8,8 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class MyQueueDLLBImplTest {
     MyQueue<Integer> queueOfInts = MyQueue.create();
 
-
-    /** Tests adding elements to the queue and verifying the front element and size. */
+    /**
+     * Test the enqueue operation of the queue.
+     * This test verifies that elements are correctly added to the end of the queue
+     * and that the order of elements is maintained.
+     */
     @Test
     void testEnqueue() {
         queueOfInts.enqueue(1);
@@ -20,7 +23,12 @@ class MyQueueDLLBImplTest {
         assertEquals("1 2", queueOfInts.toString());
     }
 
-    /** Tests removing the front element from the queue and verifying the dequeued value and size. */
+
+    /**
+     * Test the dequeue operation of the queue.
+     * This test verifies that elements are correctly removed from the front of the queue
+     * and that the order of elements is maintained.
+     */
     @Test
     void testDequeue() {
         queueOfInts.enqueue(1);
@@ -34,7 +42,10 @@ class MyQueueDLLBImplTest {
         assertEquals("2 3 4", queueOfInts.toString());
     }
 
-    /** Tests the count of elements in the queue after enqueuing multiple elements. */
+    /**
+     * Test the numOfElems operation of the queue.
+     * This test verifies that the number of elements in the queue is correctly returned.
+     */
     @Test
     void testNumOfElems() {
         assertEquals(0, queueOfInts.numOfElems());
@@ -58,7 +69,10 @@ class MyQueueDLLBImplTest {
         assertEquals(2, queueOfInts.numOfElems());
     }
 
-    /** Tests peeking at the front element of the queue without removing it after enqueuing elements. */
+    /**
+     * Test the peek operation of the queue.
+     * This test verifies that the element at the front of the queue is correctly returned.
+     */
     @Test
     void testPeek() {
         queueOfInts.enqueue(1);
@@ -68,13 +82,19 @@ class MyQueueDLLBImplTest {
     }
 
 
-    /** Tests the representation of the queue as a string using toString(). */
+    /**
+     * Test the toString operation of the queue.
+     * This test verifies that the elements in the queue are correctly returned as a string.
+     */
     @Test
-    void testToString(){
+    void testToString() {
         queueOfInts.enqueue(1);
         queueOfInts.enqueue(2);
         queueOfInts.enqueue(3);
         queueOfInts.enqueue(4);
         assertEquals("1 2 3 4", queueOfInts.toString());
     }
+
 }
+
+

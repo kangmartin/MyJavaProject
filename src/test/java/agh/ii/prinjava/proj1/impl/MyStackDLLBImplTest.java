@@ -8,7 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class MyStackDLLBImplTest {
     MyStack<Integer> stackOfInts = MyStack.create();
 
-    /** Tests pushing elements to the stack and verifying the top using peek(). */
+    /**
+     * Test the push operation of the stack.
+     * This test verifies that elements are correctly pushed onto the stack
+     * and that the order of elements is maintained with the latest element at the top.
+     */
     @Test
     void testPush() {
         stackOfInts.push(1);
@@ -28,7 +32,11 @@ class MyStackDLLBImplTest {
 
     }
 
-    /** Tests popping elements from the stack and verifying the popped values. */
+    /**
+     * Test the pop operation of the stack.
+     * This test verifies that elements are correctly popped from the top of the stack
+     * and that the order of elements is maintained.
+     */
     @Test
     void testPop() {
         stackOfInts.push(1);
@@ -40,7 +48,10 @@ class MyStackDLLBImplTest {
         assertEquals("", stackOfInts.toString());
     }
 
-    /** Tests the count of elements in the stack after pushing elements. */
+    /**
+     * Test the numOfElems operation of the stack.
+     * This test verifies that the number of elements in the stack is correctly returned.
+     */
     @Test
     void testNumOfElems() {
         assertEquals(0, stackOfInts.numOfElems());
@@ -50,7 +61,10 @@ class MyStackDLLBImplTest {
         assertEquals(2, stackOfInts.numOfElems());
     }
 
-    /** Tests peeking at the top element of the stack without removing it. */
+    /**
+     * Test the peek operation of the stack.
+     * This test verifies that the element at the top of the stack is correctly returned.
+     */
     @Test
     void testPeek() {
         stackOfInts.push(1);
@@ -61,8 +75,10 @@ class MyStackDLLBImplTest {
         System.out.println("My Stack: " + stackOfInts.toString());
     }
 
-
-    /** Tests the representation of the stack as a string using toString(). */
+    /**
+     * Test the toString operation of the stack.
+     * This test verifies that the elements in the stack are correctly returned as a string.
+     */
     @Test
     void testToString() {
         stackOfInts.push(10);

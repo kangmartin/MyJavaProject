@@ -1,8 +1,12 @@
 package agh.ii.prinjava.proj1.impl;
 
+/**
+ * A doubly linked list implementation
+ * @param <E> Type of elements in the list
+ */
 public class DLinkList<E> {
-    private Node<E> first; // Reference to the first node
-    private Node<E> last; // Reference to the last node
+    private Node<E> first;
+    private Node<E> last;
 
 
     // Node definition
@@ -12,10 +16,11 @@ public class DLinkList<E> {
         Node<T> prev;
     }
 
-    /** Adds an element to the beginning of the list.
-     *  If the list is empty, the new node is both the first and the last node.
-     *  Otherwise, the new node is the first node and the previous of the first node is set to the new node.
-     * */
+    /**
+     * Adds an element to the beginning of the linked list.
+     *
+     * @param e the element to be added to the beginning of the list
+     */
     public void addFirst(E e) {
         Node<E> newNode = new Node<>();
         newNode.element = e;
@@ -25,9 +30,10 @@ public class DLinkList<E> {
         first = newNode;
     }
 
-    /** Adds an element to the end of the list.
-     * If the list is empty, the new node is both the first and the last node.
-     * Otherwise, the new node is the last node and the next of the last node is set to the new node.
+    /**
+     * Adds an element to the end of the linked list.
+     *
+     * @param e the element to be added to the end of the list
      */
     public void addLast(E e) {
         Node<E> newNode = new Node<>();
@@ -38,9 +44,12 @@ public class DLinkList<E> {
         last = newNode;
     }
 
-    /** Removes and returns the first element of the list.
-     * If the list is not empty, set the previous of the first node to null
-     * */
+
+    /**
+     * Removes the first element from the linked list and returns it.
+     *
+     * @return the first element of the list
+     */
     public E removeFirst() {
         E element = first.element;
         first = first.next;
@@ -49,9 +58,12 @@ public class DLinkList<E> {
         return element;
     }
 
-    /** Removes and returns the last element of the list.
-     * If the list is not empty, set the next of the last node to null
-     * */
+
+    /**
+     * Removes the last element from the linked list and returns it.
+     *
+     * @return the last element of the list
+     */
     public E removeLast() {
         E element = last.element;
         last = last.prev;
@@ -60,9 +72,11 @@ public class DLinkList<E> {
         return element;
     }
 
-    /** Returns a string representation of the list.
-     * Iterate through the list and append the elements to the string builder
-     * */
+    /**
+     * Returns a string representation of the linked list.
+     *
+     * @return a string representation of the linked list
+     */
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();

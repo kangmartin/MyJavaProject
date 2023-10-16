@@ -2,22 +2,19 @@ package agh.ii.prinjava.proj1.impl;
 
 import agh.ii.prinjava.proj1.MyQueue;
 
-import java.util.NoSuchElementException;
-
 /**
- * An implementation of a queue based on a doubly linked list.
- *
- * @param <E> the type of elements stored in this queue
+ * A Queue implementation based on a doubly linked list
+ * @param <E> Type of elements in the queue
  */
 public class MyQueueDLLBImpl<E> implements MyQueue<E> {
 
     private final DLinkList<E> elems = new DLinkList<>();
     private int size = 0;
 
-    /**
+     /**
      * Adds an element to the end of the queue.
      *
-     * @param x the element to add
+     * @param x the element to be added to the queue
      */
     @Override
     public void enqueue(E x) {
@@ -26,18 +23,26 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
     }
 
     /**
-     * Removes and returns the element at the front of the queue.
+     * Removes and returns the element at the beginning of the queue.
      *
-     * @return the element at the front of the queue
-     */
+     * @return the first element of the queue
+     * @throws IllegalStateException if the queue is empty
+     * */
     @Override
     public E dequeue() {
+        if (isEmpty()){
+            throw new IllegalStateException("Queue is empty");
+        }
+
         size--;
         return elems.removeFirst();
+
     }
 
     /**
-     * @return the number of elements in the queue.
+     * Returns the number of elements in the queue.
+     *
+     * @return the number of elements in the queue
      */
     @Override
     public int numOfElems() {
@@ -45,16 +50,24 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
     }
 
     /**
-     * @return the element at the front of the queue without removing it.
+     * Peeks at the first element of the queue without removing it.
+     *
+     * @return the first element of the queue
+     * @throws IllegalStateException if the queue is empty
      */
     @Override
     public E peek() {
+        if (isEmpty()){
+            throw new IllegalStateException("Queue is empty");
+        }
         E firstElem = elems.removeFirst();
         elems.addFirst(firstElem);
         return firstElem;
     }
 
     /**
+     * Returns a string representation of the queue.
+     *
      * @return a string representation of the queue
      */
     @Override
