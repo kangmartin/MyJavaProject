@@ -2,9 +2,6 @@ package agh.ii.prinjava.proj1.impl;
 
 import agh.ii.prinjava.proj1.MyStack;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MyStackDLLBImpl<E> implements MyStack<E> {
     private final DLinkList<E> elems = new DLinkList<>();
     private int size = 0;
