@@ -28,7 +28,7 @@ queue.dequeue(); // Dequeue 2 elements
 queue.dequeue();
 System.out.println(queue.toString()); // Expected output: 10 7 3 1
 ```
-- Methods: `enqueue(E x)`, `dequeue()`, `isEmpty()`, `numOfElems()`, `peek()`
+- Methods: `enqueue(E x)`, `dequeue()`, `numOfElems()`, `peek()`, `toString()`
 
 ### MyStack<E>
 ```java
@@ -43,7 +43,7 @@ stack.pop(); // Pop 2 elements
 stack.pop();
 System.out.println(stack.toString()); // Expected output: 15 10 5
 ```
-- Methods: `push(E x)`, `pop()`, `isEmpty()`, `numOfElems()`, `peek()`
+- Methods: `push(E x)`, `pop()`, `numOfElems()`, `peek()`,`toString()`
 
 ## Testing
 
