@@ -9,6 +9,7 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
     /** Pop an element from the top of the stack. */
     @Override
     public E pop() {
+
         size--;
         return elems.removeFirst();
     }
