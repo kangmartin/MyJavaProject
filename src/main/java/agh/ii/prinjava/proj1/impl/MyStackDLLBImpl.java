@@ -1,4 +1,3 @@
-
 package agh.ii.prinjava.proj1.impl;
 
 import agh.ii.prinjava.proj1.MyStack;
@@ -8,10 +7,12 @@ import java.util.List;
 
 public class MyStackDLLBImpl<E> implements MyStack<E> {
     private final DLinkList<E> elems = new DLinkList<>();
+    private int size = 0;
 
     /** Pop an element from the top of the stack. */
     @Override
     public E pop() {
+        size--;
         return elems.removeFirst();
     }
 
@@ -19,34 +20,26 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
     @Override
     public void push(E x) {
         elems.addFirst(x);
+        size++;
     }
 
     /** Get the number of elements in the stack. */
     @Override
     public int numOfElems() {
-        int count = 0;
-        List<E> temp = new ArrayList<>();
-        while (true) {
-            try {
-                E elem = elems.removeFirst();
-                temp.add(elem);
-                count++;
-            } catch (Exception e) {
-                break;
-            }
-        }
-
-        for (E e : temp) {
-            elems.addFirst(e);
-        }
-        return count;
+        return size;
     }
+
 
     /** Peek at the top element without removing it. */
     @Override
     public E peek() {
-        E elem = elems.removeFirst();
-        elems.addFirst(elem);
-        return elem;
+        E firstElem = elems.removeFirst();
+        elems.addFirst(firstElem);
+        return firstElem;
+    }
+
+    @Override
+    public String toString() {
+        return elems.toString();
     }
 }
