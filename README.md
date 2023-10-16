@@ -11,52 +11,39 @@ This project provides implementations for stacks and queues using a doubly linke
 - `MyQueueDLLBImpl<E>`: An implementation of the `MyQueue<E>` interface using a doubly linked list.
 - `MyStackDLLBImpl<E>`: An implementation of the `MyStack<E>` interface using a doubly linked list.
 
-## Classes and Interfaces Details with Examples
-
-### DLinkList<E>
-```java
-DLinkList<Integer> list = new DLinkList<>();
-list.addFirst(5);
-list.addLast(10);
-System.out.println(list); // Expected output: 5 10
-```
-- Main methods: `addFirst(E e)`, `addLast(E e)`, `removeFirst()`, `removeLast()`
+# How to use ?
+## **Examples**
 
 ### MyQueue<E>
 ```java
 MyQueue<Integer> queue = MyQueue.create();
 queue.enqueue(5);
+queue.enqueue(22);
 queue.enqueue(10);
-System.out.println(queue.dequeue()); // Expected output: 5
+queue.enqueue(7);
+queue.enqueue(3);
+queue.enqueue(1);
+System.out.println(queue.toString()); // Expected output: 5 22 10 7 3 1
+queue.dequeue(); // Dequeue 2 elements
+queue.dequeue();
+System.out.println(queue.toString()); // Expected output: 10 7 3 1
 ```
-- Main methods: `enqueue(E x)`, `dequeue()`, `isEmpty()`, `numOfElems()`, `peek()`
+- Methods: `enqueue(E x)`, `dequeue()`, `isEmpty()`, `numOfElems()`, `peek()`
 
 ### MyStack<E>
 ```java
 MyStack<Integer> stack = MyStack.create();
 stack.push(5);
 stack.push(10);
-System.out.println(stack.pop()); // Expected output: 10
+stack.push(15);
+stack.push(20);
+stack.push(25);
+System.out.println(stack.toString()); // Expected output: 25 20 15 10 5
+stack.pop(); // Pop 2 elements
+stack.pop();
+System.out.println(stack.toString()); // Expected output: 15 10 5
 ```
-- Main methods: `push(E x)`, `pop()`, `isEmpty()`, `numOfElems()`, `peek()`
-
-### MyQueueDLLBImpl<E>
-```java
-MyQueueDLLBImpl<Integer> queue = new MyQueueDLLBImpl<>();
-queue.enqueue(5);
-queue.enqueue(10);
-System.out.println(queue.dequeue()); // Expected output: 5
-```
-- Main methods: `enqueue(E x)`, `dequeue()`, `numOfElems()`, `peek()`
-
-### MyStackDLLBImpl<E>
-```java
-MyStackDLLBImpl<Integer> stack = new MyStackDLLBImpl<>();
-stack.push(5);
-stack.push(10);
-System.out.println(stack.pop()); // Expected output: 10
-```
-- Main methods: `push(E x)`, `pop()`, `numOfElems()`, `peek()`
+- Methods: `push(E x)`, `pop()`, `isEmpty()`, `numOfElems()`, `peek()`
 
 ## Testing
 
