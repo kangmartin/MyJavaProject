@@ -35,6 +35,7 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
         return firstElem;
     }
 
+    /** Return a string representation of the stack. */
     @Override
     public String toString() {
         return elems.toString();
